@@ -1,0 +1,260 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Playfair Display', serif;
+}
+
+.site-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    background-color: #7338A0;
+    height: 80px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    position: relative;
+    z-index: 1;
+}
+
+.logo-container {
+    position: absolute;
+    top: -20px;
+    bottom: 0px;
+    left: 20px;
+    z-index: 2;
+}
+
+.logo {
+    background-color: yellow;
+    padding: 15px;
+    height: calc(100% + 30px);
+    width: 60px;
+    border-radius: 20px;
+    object-fit: contain;
+}
+
+.navigation {
+    z-index: 1;
+    margin-left: 100px;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+}
+
+.navigation ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.navigation ul li {
+    margin-left: 20px;
+}
+
+.navigation ul li a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+}
+
+.first-container {
+    position: relative;
+    background-image: url('../assets/homepage-bg.png');
+    background-size: cover;
+    background-position: center;
+    height: 700px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.first-text {
+    position: absolute;
+    color: white;
+    text-align: center;
+    filter:drop-shadow(20px 7px 10px black);
+}
+
+.first-text h2 {
+    font-size: 48px;
+    margin: 0;
+}
+
+.first-text p {
+    font-size: 24px;
+    margin: 10px 0 0;
+}
+
+.card-container {
+    font-family: "Poetsen One", sans-serif;
+    padding: 50px;
+}
+
+.card-container h2 {
+    color: #fff;
+    font-size: 60px;
+    margin-bottom: 10px;
+}
+
+.card-container p {
+    font-style: italic;
+    font-size: 30px;
+    color: #fff;
+}
+
+.second-container {
+    background-color: #7338A0;
+    padding: 20px 20px;
+    text-align: center;
+}
+
+.card {
+    background-color: #924DBF;
+    display: inline-block;
+    width: 250px;
+    margin: 0 20px;
+    text-align: center;
+    height: 350px;
+    border: solid white;
+    border-radius: 10px;
+    box-sizing: border-box;
+    justify-content: space-between;
+}
+
+.card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px 10px 0 0;
+}
+
+.card h3 {
+    color: #fff;
+    margin-top: 20px;
+    font-size: 20px;
+}
+
+.card p {
+    margin-top: 43px;
+}
+
+.card p a{
+    text-decoration: none;
+    color: #fff;
+}
+
+.card p a:hover{
+    text-decoration: none;
+    color: #333;
+}
+
+.button-container {
+    margin-top: 80px;
+}
+
+.button {
+    padding: 10px 20px;
+    background-color: #7338A0;
+    color: white;
+    text-decoration: none;
+    border-radius: 20px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    border: 2px solid white;
+}
+
+.button:hover {
+    background-color: #6a1bb1;
+}
+
+.site-footer {
+    padding-top: 150px;
+    background-color: #7338A0;
+    color: #fff;
+    text-align: left;
+}
+
+.garis-footer{
+    padding: 20px;
+    border: 2px solid #fff;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    bottom: -15px;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding-bottom: 20px;
+    justify-content: center;
+}
+
+.footer-logo{
+    height: 40px;
+    width: 40px;
+}
+
+.footer-column {
+    flex: 1;
+    min-width: 200px;
+    align-items: center;
+}
+
+.footer-column-logo {
+    width: 80px;
+    padding: 20px;
+    align-items: center;
+}
+.footer-column h4 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.footer-column ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-column ul li {
+    margin-bottom: 10px;
+}
+
+.footer-column ul li a {
+    text-decoration: none;
+    color: #fff;
+}
+
+.footer-column ul li a:hover {
+    color: #ccc;
+}
+
+.social-icons {
+    display: flex;
+    gap: 10px;
+}
+
+.social-icons img {
+    width: 24px;
+    height: 24px;
+}
+
+.footer-bottom {
+    border-top: #fff;
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.footer-logo-bottom {
+    width: 50px;
+    height: 50px;
+}
+
+.footer-bottom p {
+    padding-left: 20px;
+    margin: 0;
+    font-size: 14px;
+}
