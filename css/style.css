@@ -1,7 +1,16 @@
+/* Reset CSS */
 body, html {
+    font-family: 'Playfair Display', serif;
+    overflow-x: hidden;
+    margin: 0; /* Tambahkan ini */
+    padding: 0; /* Tambahkan ini */
+}
+
+/* Optional: Anda bisa menggunakan reset CSS lebih luas */
+* {
     margin: 0;
     padding: 0;
-    font-family: 'Playfair Display', serif;
+    box-sizing: border-box; /* Tambahkan ini untuk memastikan padding dan border termasuk dalam width/height elemen */
 }
 
 .site-header {
@@ -14,6 +23,8 @@ body, html {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     position: relative;
     z-index: 1;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .logo-container {
@@ -36,9 +47,9 @@ body, html {
 .navigation {
     z-index: 1;
     margin-left: 100px;
-    z-index: 1;
     display: flex;
     align-items: center;
+    flex-wrap: nowrap;
 }
 
 .navigation ul {
@@ -46,6 +57,7 @@ body, html {
     display: flex;
     margin: 0;
     padding: 0;
+    flex-wrap: nowrap;
 }
 
 .navigation ul li {
@@ -58,6 +70,15 @@ body, html {
     font-weight: bold;
 }
 
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 24px;
+    cursor: pointer;
+}
+
 .first-container {
     position: relative;
     background-image: url('../assets/homepage-bg.png');
@@ -67,13 +88,17 @@ body, html {
     display: flex;
     justify-content: center;
     align-items: center;
+    width: 100%;
+    box-sizing: border-box;
+    margin: 0; /* Tambahkan ini */
+    padding: 0; /* Tambahkan ini */
 }
 
 .first-text {
     position: absolute;
     color: white;
     text-align: center;
-    filter:drop-shadow(20px 7px 10px black);
+    filter: drop-shadow(20px 7px 10px black);
 }
 
 .first-text h2 {
@@ -87,8 +112,8 @@ body, html {
 }
 
 .card-container {
+    padding: 20px;
     font-family: "Poetsen One", sans-serif;
-    padding: 50px;
 }
 
 .card-container h2 {
@@ -105,15 +130,18 @@ body, html {
 
 .second-container {
     background-color: #7338A0;
-    padding: 20px 20px;
     text-align: center;
+    width: 100%;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
 .card {
     background-color: #924DBF;
     display: inline-block;
     width: 250px;
-    margin: 0 20px;
+    margin: 10px 20px;
     text-align: center;
     height: 350px;
     border: solid white;
@@ -139,12 +167,12 @@ body, html {
     margin-top: 43px;
 }
 
-.card p a{
+.card p a {
     text-decoration: none;
     color: #fff;
 }
 
-.card p a:hover{
+.card p a:hover {
     text-decoration: none;
     color: #333;
 }
@@ -173,9 +201,11 @@ body, html {
     background-color: #7338A0;
     color: #fff;
     text-align: left;
+    width: 100%;
+    box-sizing: border-box;
 }
 
-.garis-footer{
+.garis-footer {
     padding: 20px;
     border: 2px solid #fff;
     border-top-left-radius: 20px;
@@ -191,7 +221,7 @@ body, html {
     justify-content: center;
 }
 
-.footer-logo{
+.footer-logo {
     height: 40px;
     width: 40px;
 }
@@ -207,6 +237,7 @@ body, html {
     padding: 20px;
     align-items: center;
 }
+
 .footer-column h4 {
     font-size: 18px;
     margin-bottom: 10px;
@@ -257,4 +288,54 @@ body, html {
     padding-left: 20px;
     margin: 0;
     font-size: 14px;
+}
+
+@media (max-width: 425px) {
+    .site-header {
+        flex-direction: row;
+        height: auto;
+        padding: 10px;
+        justify-content: space-between;
+    }
+
+    .logo-container {
+        position: static;
+        margin-bottom: 0;
+    }
+
+    .navigation {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background-color: #7338A0;
+        position: absolute;
+        top: 80px;
+        left: 0;
+    }
+
+    .navigation.active {
+        display: flex;
+    }
+
+    .navigation ul {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .navigation ul li {
+        width: 100%;
+        text-align: center;
+        margin: 10px 0;
+    }
+
+    .navigation ul li a {
+        font-size: 18px;
+        padding: 10px;
+        display: block;
+        width: 100%;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
 }
