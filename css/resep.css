@@ -2,6 +2,13 @@ body, html {
     margin: 0;
     padding: 0;
     font-family: 'Playfair Display', serif;
+    overflow-x: hidden;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 .site-header {
@@ -14,6 +21,7 @@ body, html {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     position: relative;
     z-index: 1;
+    width: 100%;
 }
 
 .logo-container {
@@ -36,7 +44,6 @@ body, html {
 .navigation {
     z-index: 1;
     margin-left: 100px;
-    z-index: 1;
     display: flex;
     align-items: center;
 }
@@ -58,6 +65,15 @@ body, html {
     font-weight: bold;
 }
 
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 24px;
+    cursor: pointer;
+}
+
 .first-container {
     position: relative;
     background-image: url('../assets/resep-pg.png');
@@ -67,6 +83,8 @@ body, html {
     display: flex;
     justify-content: center;
     align-items: center;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .first-text {
@@ -131,7 +149,6 @@ body, html {
     height: 350px;
     text-align: left;
     justify-content: space-between;
-    margin: auto;
 }
 
 .card img {
@@ -220,7 +237,8 @@ body, html {
     padding: 10px;
 }
 
-.new-card-content p {
+.new-card-content a {
+    text-decoration: none;
     color: #fff;
     font-size: 18px;
     margin: 0;
@@ -231,9 +249,11 @@ body, html {
     background-color: #7338A0;
     color: #fff;
     text-align: left;
+    width: 100%;
+    box-sizing: border-box;
 }
 
-.garis-footer{
+.garis-footer {
     padding: 20px;
     border: 2px solid #fff;
     border-top-left-radius: 20px;
@@ -249,7 +269,7 @@ body, html {
     justify-content: center;
 }
 
-.footer-logo{
+.footer-logo {
     height: 40px;
     width: 40px;
 }
@@ -265,6 +285,7 @@ body, html {
     padding: 20px;
     align-items: center;
 }
+
 .footer-column h4 {
     font-size: 18px;
     margin-bottom: 10px;
@@ -315,4 +336,54 @@ body, html {
     padding-left: 20px;
     margin: 0;
     font-size: 14px;
+}
+
+@media (max-width: 425px) {
+    .site-header {
+        flex-direction: row;
+        height: auto;
+        padding: 10px;
+        justify-content: space-between;
+    }
+
+    .logo-container {
+        position: static;
+        margin-bottom: 0;
+    }
+
+    .navigation {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background-color: #7338A0;
+        position: absolute;
+        top: 80px;
+        left: 0;
+    }
+
+    .navigation.active {
+        display: flex;
+    }
+
+    .navigation ul {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .navigation ul li {
+        width: 100%;
+        text-align: center;
+        margin: 10px 0;
+    }
+
+    .navigation ul li a {
+        font-size: 18px;
+        padding: 10px;
+        display: block;
+        width: 100%;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
 }
