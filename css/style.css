@@ -1,16 +1,15 @@
-/* Reset CSS */
 body, html {
     font-family: 'Playfair Display', serif;
     overflow-x: hidden;
-    margin: 0; /* Tambahkan ini */
-    padding: 0; /* Tambahkan ini */
+    margin: 0;
+    padding: 0;
 }
 
-/* Optional: Anda bisa menggunakan reset CSS lebih luas */
+
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box; /* Tambahkan ini untuk memastikan padding dan border termasuk dalam width/height elemen */
+    box-sizing: border-box;
 }
 
 .site-header {
@@ -90,8 +89,8 @@ body, html {
     align-items: center;
     width: 100%;
     box-sizing: border-box;
-    margin: 0; /* Tambahkan ini */
-    padding: 0; /* Tambahkan ini */
+    margin: 0;
+    padding: 0;
 }
 
 .first-text {
