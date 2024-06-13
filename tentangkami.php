@@ -3,60 +3,63 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HomePage</title>
+    <title>Resep-Resep</title>
     <link rel="icon" type="image/x-icon" href="assets/logo.png">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/tentangkami.css">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Poetsen+One&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.1/dist/aos.js"></script>
 </head>
 <body>
     <header class="site-header">
         <div class="logo-container">
             <img src="assets/logo.png" alt="Website Logo" class="logo" data-aos="fade-right">
         </div>
-        <nav class="navigation">
+        <nav class="navigation" data-aos="fade-right">
             <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="resep-resep.html">Resep-Resep</a></li>
+                <li><a href="homepage.php">Home</a></li>
+                <li><a href="kategori.php">Resep-Resep</a></li>
                 <li><a href="#services">Tentang Kami</a></li>
-                <li><a href="index.html">Log Out</a></li>
+                <li><a href="../login.php">Log Out</a></li>
             </ul>
         </nav>
         <button class="menu-toggle"><i class="fas fa-bars"></i></button>
     </header>
-    
+
     <div class="first-container">
         <div class="first-text" data-aos="fade-up">
-            <h2>KREASIKAN DAN SAJIKAN <br> MAKANAN LEBIH ISTIMEWA</h2>
-            <p>#Kreasikan Saja Dulu!</p>
+            <p>Kami adalah sekelompok pemuda yang membangun sebuah website,<br>
+            website yang kami bangun yaitu bertema resep-resep makanan. <br>
+            Disini kami ingin mempermudah bagi kalian yang ingin mencari resep makanan yang enak dan mudah.</p>
+            <h2>#KREASIKANAZAA</h2>
         </div>
     </div>
 
     <div class="second-container">
         <div class="card-container">
-            <h2 data-aos="fade-up">INSPIRASI RESEP</h2>
-            <p data-aos="fade-up">Jadikan masakan sederhana menjadi lebih istimewa</p>
+            <h2 data-aos="fade-up">4 RESEP ANDALAN KAMI</h2>
         </div>
         <div class="second-container">
-            <div class="card" data-aos="fade-right">
-                <img src="assets/ayam_tl.png" alt="Food Image">
-                <h3>Ayam Taliwang</h3>
-                <p><a href="#">Baca Selengkapnya ></a></p>
-            </div>
-            <div class="card"  data-aos="fade-up">
-                <img src="assets/bebek_bi.png" alt="Food Image">
-                <h3>Bebek Bumbu Hitam</h3>
-                <p><a href="#">Baca Selengkapnya ></a></p>
-            </div>
-            <div class="card" data-aos="fade-left">
-                <img src="assets/sateklatak.png" alt="Food Image">
-                <h3>Sate Klatak</h3>
-                <p><a href="#">Baca Selengkapnya ></a></p>
-            </div>
-            <div class="button-container" data-aos="fade-up">
-                <a href="#" class="button">Lihat Lainnya ></a>
-            </div>
+            <?php
+            include 'koneksi.php';
+            $sql = "SELECT * FROM menu LIMIT 4";
+                $result = $conn->query($sql);
+                if ($result->num_rows > 0){
+                    while($row = $result->fetch_assoc()){
+                        echo '<div class="card" data-aos="fade-right">';
+                            echo '<img src="'.$row['gambar'].'" alt="'.$row['nama'].'">';
+                            echo '<h3>'.$row['nama'].'</h3>';
+                            echo '<p><a href="resep.php?id_menu='.$row['id_menu'].'">Baca Selengkapnya ></a></p>';
+                        echo '</div>';
+                    }
+                } else {
+                    echo "0 results";
+                }
+                $conn->close();
+            ?>
         </div>        
     </div>
 
@@ -69,9 +72,9 @@
                 <div class="footer-column">
                     <h4>Tautan Cepat</h4>
                     <ul>
-                        <li><a href="#">Home</a></li>
-                        <li><a href="#about">Resep-Resep</a></li>
-                        <li><a href="#services">Tentang Kami</a></li>
+                        <li><a href="homepage.php">Home</a></li>
+                        <li><a href="kategori.php">Resep-Resep</a></li>
+                        <li><a href="#header">Tentang Kami</a></li>
                     </ul>
                 </div>
                 <div class="footer-column">
@@ -98,6 +101,13 @@
             </div>
         </div>
     </footer>    
+
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 1000
+        });
+    </script>
     <script src="js/script.js"></script>
 </body>
 </html>
