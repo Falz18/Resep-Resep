@@ -43,23 +43,11 @@
             <h2 data-aos="fade-up">4 RESEP ANDALAN KAMI</h2>
         </div>
         <div class="second-container">
-            <?php
-            include 'koneksi.php';
-            $sql = "SELECT * FROM menu LIMIT 4";
-                $result = $conn->query($sql);
-                if ($result->num_rows > 0){
-                    while($row = $result->fetch_assoc()){
-                        echo '<div class="card" data-aos="fade-right">';
-                            echo '<img src="'.$row['gambar'].'" alt="'.$row['nama'].'">';
-                            echo '<h3>'.$row['nama'].'</h3>';
-                            echo '<p><a href="resep.php?id_menu='.$row['id_menu'].'">Baca Selengkapnya ></a></p>';
-                        echo '</div>';
-                    }
-                } else {
-                    echo "0 results";
-                }
-                $conn->close();
-            ?>
+             <div class="card" data-aos="fade-right">
+                 <img src="'.$row['gambar'].'" alt="'.$row['nama'].'">
+                 <h3>'.$row['nama'].'</h3>
+                 <p><a href="resep.php?id_menu='.$row['id_menu'].'">Baca Selengkapnya ></a></p>
+             </div>
         </div>        
     </div>
 
