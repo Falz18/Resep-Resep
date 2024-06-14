@@ -320,16 +320,16 @@ body, html {
     }
 
     .first-text {
-        font-size: 14px;
+        font-size: 12px;
         padding: 10px;
     }
 
     .first-text h2 {
-        font-size: 24px;
+        font-size: 20px;
     }
 
     .first-text p {
-        font-size: 16px;
+        font-size: 14px;
     }
 
     .card-container {
@@ -339,6 +339,7 @@ body, html {
     .card {
         width: 100%;
         height: auto;
+        margin: 10px 0;
     }
 
     .card img {
@@ -350,8 +351,12 @@ body, html {
     }
 
     .card p {
-        margin-top: 20px;
-        font-size: 14px;
+        margin-top: 10px;
+        font-size: 12px;
+    }
+
+    .site-footer {
+        padding-top: 50px;
     }
 
     .footer-container {
